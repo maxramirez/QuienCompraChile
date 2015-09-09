@@ -37,10 +37,10 @@
       <file leaf-file-name="simple-todos.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/simple-todos.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.07692308" vertical-offset="1223" max-vertical-offset="2108">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="134" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.1260745" vertical-offset="1255" max-vertical-offset="2108">
+              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="138" selection-end-column="11" />
               <folding>
-                <element signature="e#2085#2105#0" expanded="false" />
+                <element signature="e#2087#2107#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -49,7 +49,7 @@
       <file leaf-file-name="simple-todos.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/simple-todos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.923077" vertical-offset="409" max-vertical-offset="1003">
+            <state vertical-scroll-proportion="-34.653847" vertical-offset="0" max-vertical-offset="1003">
               <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
               <folding />
             </state>
@@ -72,9 +72,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="476" />
-    <option name="width" value="1725" />
-    <option name="height" value="1201" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2210" />
+    <option name="height" value="1210" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -226,15 +227,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="476" y="0" width="1725" height="1201" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="2210" height="1210" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3292797" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3265306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33847067" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26289135" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40224507" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328792" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -270,16 +271,16 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/simple-todos.js</url>
-          <line>73</line>
+          <line>75</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/simple-todos.js</url>
-          <line>77</line>
-          <option name="timeStamp" value="17" />
+          <line>80</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -364,14 +365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simple-todos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.923077" vertical-offset="409" max-vertical-offset="1003">
-          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simple-todos.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1152" max-vertical-offset="2261">
@@ -380,12 +373,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/simple-todos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-34.653847" vertical-offset="0" max-vertical-offset="1003">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/simple-todos.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07692308" vertical-offset="1223" max-vertical-offset="2108">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="134" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.1260745" vertical-offset="1255" max-vertical-offset="2108">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="138" selection-end-column="11" />
           <folding>
-            <element signature="e#2085#2105#0" expanded="false" />
+            <element signature="e#2087#2107#0" expanded="false" />
           </folding>
         </state>
       </provider>

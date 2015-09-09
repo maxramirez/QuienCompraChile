@@ -1,3 +1,5 @@
+
+
 Tasks = new Mongo.Collection("tasks");
 //var fs = Npm.require('fs');
 if (Meteor.isServer) {
@@ -74,73 +76,72 @@ if (Meteor.isClient) {
     passwordSignupFields: "USERNAME_ONLY"
   });
 
-  //region CHILECOMPRA
-  function ChileCompraDateString(date) {
-    debugger;
-    var day = date.getDay();
-    var month = date.getMonth();
-    var year = date.getFullYear();
-    var dateString = (day < 10 ? "0" : "") + day + (month < 10 ? "0" : "") + month +""+ year;
-    return dateString;
-  }
-  function getAdjudicatedBetweenWithDetails(initialDate,finalDate){
-    var totalAdjudicated=getAdjudicatedBetween(initialDate,finalDate);
-    for(var i=0;i<totalAdjudicated.length;i++){
-      totalAdjudicated[i]=getDetails(totalAdjudicated[i].CodigoExterno);
-    }
-    return totalAdjudicated;
-  }
-  function getAdjudicatedBetween( initialDate, finalDate) {
-    var totalAdjudicated = [];
-    debugger;
-    date=initialDate;
-    while (+date <= +finalDate) {
-      totalAdjudicated.concat(getAdjudicated(date));
-      date.setDate(date.getDate() + 1);
-    }
-    return totalAdjudicated;
-  }
-  function getDetails(code){
-    var response;
-    debugger;
-    $.ajax({
-      url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?codigo="+code+"&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
-      async:false
-    }).success(function (data) {
-      response=data;
-    });
-    return response;
-  }
-  function getAdjudicated(date) {
-    var chileCompraDate = ChileCompraDateString(date);
-    var response;
-    $.ajax({
-      url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?fecha="+chileCompraDate+"&estado=adjudicada&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
-      async:false
-    }).success(function (data) {
-      response=data.Listado;
-    });
-    return response;
-  }
-  function getCompanies(){
-    var companies=[];
-    requestNumber = JSONRequest.post("https://json.penzance.org/request")
-    $.ajax({
-      url: "",
-      context: document.body
-    }).done(function() {
-      $( this ).addClass( "done" );
-    });
-  }
-  //endregion
-
 }
-
+//region CHILECOMPRA
+function ChileCompraDateString(date) {
+  debugger;
+  var day = date.getDay();
+  var month = date.getMonth();
+  var year = date.getFullYear();
+  var dateString = (day < 10 ? "0" : "") + day + (month < 10 ? "0" : "") + month +""+ year;
+  return dateString;
+}
+function getAdjudicatedBetweenWithDetails(initialDate,finalDate){
+  var totalAdjudicated=getAdjudicatedBetween(initialDate,finalDate);
+  for(var i=0;i<totalAdjudicated.length;i++){
+    totalAdjudicated[i]=getDetails(totalAdjudicated[i].CodigoExterno);
+  }
+  return totalAdjudicated;
+}
+function getAdjudicatedBetween( initialDate, finalDate) {
+  var totalAdjudicated = [];
+  debugger;
+  date=initialDate;
+  while (+date <= +finalDate) {
+    var adjudicated = getAdjudicated(date);
+    totalAdjudicated=totalAdjudicated.concat(adjudicated);
+    date.setDate(date.getDate() + 1);
+  }
+  return totalAdjudicated;
+}
+function getDetails(code){
+  var response;
+  debugger;
+  jQuery.ajax({
+    url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?codigo="+code+"&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
+    async:false
+  }).success(function (data) {
+    response=data;
+  });
+  return response;
+}
+function getAdjudicated(date) {
+  var chileCompraDate = ChileCompraDateString(date);
+  var response;
+  jQuery.ajax({
+    url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?fecha="+chileCompraDate+"&estado=adjudicada&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
+    async:false
+  }).success(function (data) {
+    response=data.Listado;
+  });
+  return response;
+}
+function getCompanies(){
+  var companies=[];
+  requestNumber = JSONRequest.post("https://json.penzance.org/request")
+  $.ajax({
+    url: "",
+    context: document.body
+  }).done(function() {
+    $( this ).addClass( "done" );
+  });
+}
+//endregion
 Meteor.startup(function(){
   var filePath =  'c:/db/myFile.js'  ;
   console.log("bla bla bla");
-  var adjudicatedBetween = getAdjudicatedBetween(new Date(), new Date());
-  console.log( adjudicatedBetween ) ;    // shows /Uses/martinfox/tmp/auto-generated/myFile.js
+  //var adjudicatedBetween = getAdjudicatedBetween(new Date(), new Date());
+  //console.log( adjudicatedBetween ) ;    // shows /Uses/martinfox/tmp/auto-generated/myFile.js
   //var buffer = new Buffer( ) ;
   //fs.writeFileSync( filePath, buffer ) ;
 });
