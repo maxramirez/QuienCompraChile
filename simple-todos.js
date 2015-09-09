@@ -105,9 +105,9 @@ if (Meteor.isClient) {
 }
 Meteor.startup(function(){
   var filePath =  'c:/db/myFile.js'  ;
-  console.log( filePath ) ;    // shows /Uses/martinfox/tmp/auto-generated/myFile.js
-  var buffer = new Buffer( ) ;
-  fs.writeFileSync( filePath, buffer ) ;
+  //console.log( filePath ) ;    // shows /Uses/martinfox/tmp/auto-generated/myFile.js
+  //var buffer = new Buffer( ) ;
+  //fs.writeFileSync( filePath, buffer ) ;
 });
 Meteor.methods({
   addTask: function (text) {
