@@ -86,7 +86,7 @@ if (Meteor.isClient) {
   function getAdjudicatedBetweenWithDetails(initialDate,finalDate){
     var totalAdjudicated=getAdjudicatedBetween(initialDate,finalDate);
     for(var i=0;i<totalAdjudicated.length;i++){
-      totalAdjudicated[i]=getDetails(totalAdjudicated[i]);
+      totalAdjudicated[i]=getDetails(totalAdjudicated[i].CodigoExterno);
     }
     return totalAdjudicated;
   }
@@ -95,15 +95,14 @@ if (Meteor.isClient) {
     debugger;
     date=initialDate;
     while (+date <= +finalDate) {
-      var adjudicated = getAdjudicated(initialDate);
-      totalAdjudicated.concat(getDetails(adjudicated));
+      totalAdjudicated.concat(getAdjudicated(date));
       date.setDate(date.getDate() + 1);
-
     }
     return totalAdjudicated;
   }
   function getDetails(code){
     var response;
+    debugger;
     $.ajax({
       url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?codigo="+code+"&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
       async:false
