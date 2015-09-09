@@ -12,6 +12,7 @@ if (Meteor.isServer) {
     });
   });
 }
+
 if (Meteor.isClient) {
   Meteor.subscribe("tasks");
   // This code only runs on the client
@@ -72,40 +73,13 @@ if (Meteor.isClient) {
   Accounts.ui.config({
     passwordSignupFields: "USERNAME_ONLY"
   });
-  function ChileCompraDateString(date) {
-    debugger;
-    var day = date.getDay();
-    var month = date.getMonth();
-    var year = date.getYear();
-    var dateString = day < 10 ? 0 : "" + day + month < 10 ? 0 : "" + month + year;
-    return dateString;
-  }
-
-  function getAdjudicated(date) {
-    var chileCompraDate = ChileCompraDateString(date);
-    var response;
-    $.ajax({
-      url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?fecha="+chileCompraDate+"&estado=adjudicada&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
-      async:false
-    }).success(function (data) {
-      response=data;
-    });
-    return response;
-  }
-  function getCompanies(){
-    var companies=[];
-    requestNumber = JSONRequest.post("https://json.penzance.org/request")
-    $.ajax({
-      url: "",
-      context: document.body
-    }).done(function() {
-      $( this ).addClass( "done" );
-    });
-  }
 }
+
 Meteor.startup(function(){
   var filePath =  'c:/db/myFile.js'  ;
-  //console.log( filePath ) ;    // shows /Uses/martinfox/tmp/auto-generated/myFile.js
+  console.log("bla bla bla");
+  var adjudicatedBetween = getAdjudicatedBetween(new Date(), new Date());
+  console.log( adjudicatedBetween ) ;    // shows /Uses/martinfox/tmp/auto-generated/myFile.js
   //var buffer = new Buffer( ) ;
   //fs.writeFileSync( filePath, buffer ) ;
 });
@@ -139,10 +113,41 @@ Meteor.methods({
       Tasks.update(taskId, {$set: {private: setToPrivate}});
     }
 });
-function getLic( initialDate, finalDate){
-  var totalAdjudicated=[];
-  while(+initialDate<+finalDate){
+
+function ChileCompraDateString(date) {
+  debugger;
+  var day = date.getDay();
+  var month = date.getMonth();
+  var year = date.getYear();
+  var dateString = day < 10 ? 0 : "" + day + month < 10 ? 0 : "" + month + year;
+  return dateString;
+}
+function getAdjudicatedBetween( initialDate, finalDate) {
+  var totalAdjudicated = [];
+  while (+initialDate < +finalDate) {
     var adjudicated = getAdjudicated(initialDate);
     totalAdjudicated.concat(adjudicated);
   }
+  return totalAdjudicated;
+}
+function getAdjudicated(date) {
+  var chileCompraDate = ChileCompraDateString(date);
+  var response;
+  $.ajax({
+    url: "http://api.mercadopublico.cl/servicios/v1/publico/licitaciones.json?fecha="+chileCompraDate+"&estado=adjudicada&ticket=F8537A18-6766-4DEF-9E59-426B4FEE2844",
+    async:false
+  }).success(function (data) {
+    response=data.listado;
+  });
+  return response;
+}
+function getCompanies(){
+  var companies=[];
+  requestNumber = JSONRequest.post("https://json.penzance.org/request")
+  $.ajax({
+    url: "",
+    context: document.body
+  }).done(function() {
+    $( this ).addClass( "done" );
+  });
 }

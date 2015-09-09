@@ -9,3 +9,4 @@ accounts-ui
 accounts-password
 jquery
 iron:router
+ssadams:meteor-sigma
